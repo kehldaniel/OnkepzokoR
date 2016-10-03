@@ -8,6 +8,7 @@ a[-2]
 d[d<3]
 
 # by names
+b <- rnorm(9)
 names(b) <- letters[1:9]
 b["f"]
 
@@ -33,3 +34,10 @@ M[1:2,3:4]
 
 # Factors -> alapvetően kategóriás változók tárolására (nominális és ordinális változat is van)
 # A változó értékei mellett a lehetséges ismérvváltozatokat is tárolja (ettől kicset eltérően viselkedik ez-az)
+f <- factor(rep(letters[1:10],3))
+levels(f)
+
+table(f)
+
+levels(f) <- letters[1:11]
+table(f)
