@@ -41,3 +41,49 @@ table(f)
 
 levels(f) <- letters[1:11]
 table(f)
+
+# Listák -> akár különböző struktúrájú, de összefüggő adatok tárolása (tipikusan ilyen egy függvény outputja)
+mylist <- list(a, b, M, f)
+# Vigyázat!
+mylist[1] != mylist[[1]] # előbbi egy egyelemű lista, utóbbi a "tényleges" első elem
+
+# Kényelmesebb tárolás nevesített elemekkel
+mylist2 <- list(res1=a, res2=b, res3=M, res4=f)
+mylist2$res1
+
+# Dataframe -> a klasszikus adattároló eszköz (speciális lista, ahol minden elem ugyan olyan méretű
+a <- c("John", "Karl", "Kate")
+b <- c(4.5, 4.8, 3.2)
+d <- factor(c("male","male","female"))
+df <- data.frame(statpoint=b,gender=d)
+rownames(df) <- a
+# try df$b, df$statpoint, names(df) and str(df)
+
+# Van rengeteg beépített adatállomány az R-ben
+data()
+data(package = .packages(all.available = TRUE))
+
+# Külső adatok beolvasása
+getwd() # munkakönyvtár beállítások
+setwd()
+scan() # ritkán használtam, sok beállítási lehetőség
+read.table() # általánosan használt
+readLines() # leginkább szövegekhez
+fread() # nagy állományok beolvasás, gyorsan (data.table csomag, aki nagy állományokkal dolgozik, érdemes megismerni)
+foreign csomag (SPSS, SAS stb.)
+
+newx <- edit(data.frame())
+
+# Próbáljuk ki az alábbi függvényeket
+## categorical data
+ # table(): frequency table, contingency table
+ # barplot(), pie(), dotchart()
+ # table(), margin.table(), addmargins(), prop.table()
+## numerical data
+ # stem(), hist(), boxplot()
+ # mean(), sd(), var(), quantile(), IQR()
+ # cor(), cov()
+ # qqplot(), boxplot()
+ # plot() [plot(0:25,pch=0:25)]
+ # example(pairs)
+ # Chernoff-faces
