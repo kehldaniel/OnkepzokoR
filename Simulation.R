@@ -1,7 +1,7 @@
 # Függvények írása
 
-functionname <- function(){
-    operations
+functionname <- function(args){
+    operations(args)
 }
 
 MyFirstFunction <- function(x){
